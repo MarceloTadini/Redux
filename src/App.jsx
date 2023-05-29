@@ -1,11 +1,13 @@
+import { useSelector } from "react-redux";
 
 function App() {
+  const tasks = useSelector(state => state.data)
   return (
-    <div className="App">
-      <h1>
-        Hello World!
-      </h1>
-    </div>
+    <ul>
+      {
+        tasks.map(task => <li>{task}</li>)
+      }
+    </ul>
   );
 }
 
